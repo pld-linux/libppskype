@@ -1,0 +1,12 @@
+--- libskype/common.mk~	2006-10-18 12:51:00.000000000 +0300
++++ libskype/common.mk	2007-01-11 01:58:22.719175021 +0200
+@@ -13,7 +13,8 @@
+ ## IF YOU ARE NOT REALLY KNOW WHAT YOU ARE DOING
+ 
+ INCLS_COMMON=-I$(BOOST_INCLUDES) -I$(LOKI_INCLUDES)
+-CFLAGS  = -O3 -fPIC -Wall -MMD -DVERSION_NUM=\"${VERSION_NUM}\" -DVERSION_ALIAS=\"${VERSION_ALIAS}\" -DVERSION_DATE=\"${VERSION_DATE}\" 
++CFLAGS  = $(OPTFLAGS) -fPIC -Wall -MMD -DVERSION_NUM=\"${VERSION_NUM}\" -DVERSION_ALIAS=\"${VERSION_ALIAS}\" -DVERSION_DATE=\"${VERSION_DATE}\" 
++OPTFLAGS = -O3 
+ 
+ # Common Object files required for skype library building
+ LIB_O_COMMON = $(patsubst %.cpp,%.obj,$(wildcard *.cpp))
