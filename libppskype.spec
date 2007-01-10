@@ -7,7 +7,9 @@ Group:		Libraries
 Source0:	http://www.icebrains-soft.com/files/distribs/libppskype/%{name}.tar.bz2
 # Source0-md5:	84cf9b1b32f3369435642a17a0e3c445
 URL:		http://www.icebrains-soft.com/skype_library_0
-BuildRequires:	boost-date_time-devel
+BuildRequires:	boost-date_time-devel >= 1.33.1
+BuildRequires:	boost-regex-devel >= 1.33.1
+BuildRequires:	boost-test-devel >= 1.33.1
 BuildRequires:	dbus-devel
 BuildRequires:	loki-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
