@@ -27,7 +27,8 @@ Skype add-on software.
 
 %build
 %{__make} -f Makefile.unx \
-	CCP="%{__cxx}"
+	CCP="%{__cxx}" \
+	OPTFLAGS="%{rpmcxxflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
