@@ -1,6 +1,5 @@
-# TODO
-# - devel, shared library and -static
 Summary:	++Skype library
+Summary(pl):	Biblioteka ++Skype
 Name:		libppskype
 Version:	0
 Release:	0.1
@@ -21,6 +20,35 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ++Skype library is a new, modern way to develop platform independent
 Skype add-on software.
 
+%description -l pl
+Biblioteka ++Skype to nowy, nowoczesny sposób tworzenia dodatków do
+Skype'a niezale¿nych od platformy.
+
+%package devel
+Summary:	Header files for ++Skype library
+Summary(pl):	Pliki nag³ówkowe biblioteki ++Skype
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+#Requires:	FILLME (boost,dbus,loki-devel???)
+
+%description devel
+Header files for ++Skype library.
+
+%description devel -l pl
+Pliki nag³ówkowe biblioteki ++Skype.
+
+%package static
+Summary:	Static ++Skype library
+Summary(pl):	Statyczna biblioteka ++Skype
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static ++Skype library.
+
+%description static -l pl
+Statyczna biblioteka ++Skype.
+
 %prep
 %setup -q -n libskype
 %patch0 -p1
@@ -32,6 +60,7 @@ Skype add-on software.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} -f Makefile.unx install  \
 	INSTALL_DIR=$RPM_BUILD_ROOT
 
@@ -42,9 +71,18 @@ mv $RPM_BUILD_ROOT{/lib/*,%{_libdir}}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc TODO
-%{_includedir}/libppskype
-%{_libdir}/libppskype.a
 %attr(755,root,root) %{_libdir}/libppskype.so
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/libppskype
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libppskype.a
