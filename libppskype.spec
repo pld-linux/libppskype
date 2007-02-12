@@ -1,5 +1,5 @@
 Summary:	++Skype library
-Summary(pl):	Biblioteka ++Skype
+Summary(pl.UTF-8):   Biblioteka ++Skype
 Name:		libppskype
 Version:	0
 Release:	0.1
@@ -20,13 +20,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ++Skype library is a new, modern way to develop platform independent
 Skype add-on software.
 
-%description -l pl
-Biblioteka ++Skype to nowy, nowoczesny spos骲 tworzenia dodatk體 do
-Skype'a niezale縩ych od platformy.
+%description -l pl.UTF-8
+Biblioteka ++Skype to nowy, nowoczesny spos贸b tworzenia dodatk贸w do
+Skype'a niezale偶nych od platformy.
 
 %package devel
 Summary:	Header files for ++Skype library
-Summary(pl):	Pliki nag丑wkowe biblioteki ++Skype
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe biblioteki ++Skype
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 #Requires:	FILLME (boost,dbus,loki-devel???)
@@ -34,19 +34,19 @@ Requires:	%{name} = %{version}-%{release}
 %description devel
 Header files for ++Skype library.
 
-%description devel -l pl
-Pliki nag丑wkowe biblioteki ++Skype.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe biblioteki ++Skype.
 
 %package static
 Summary:	Static ++Skype library
-Summary(pl):	Statyczna biblioteka ++Skype
+Summary(pl.UTF-8):   Statyczna biblioteka ++Skype
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static ++Skype library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka ++Skype.
 
 %prep
