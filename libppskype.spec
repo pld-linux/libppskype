@@ -1,5 +1,5 @@
 Summary:	++Skype library
-Summary(pl.UTF-8):   Biblioteka ++Skype
+Summary(pl.UTF-8):	Biblioteka ++Skype
 Name:		libppskype
 Version:	0
 Release:	0.1
@@ -26,7 +26,7 @@ Skype'a niezależnych od platformy.
 
 %package devel
 Summary:	Header files for ++Skype library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki ++Skype
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki ++Skype
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 #Requires:	FILLME (boost,dbus,loki-devel???)
@@ -39,7 +39,7 @@ Pliki nagłówkowe biblioteki ++Skype.
 
 %package static
 Summary:	Static ++Skype library
-Summary(pl.UTF-8):   Statyczna biblioteka ++Skype
+Summary(pl.UTF-8):	Statyczna biblioteka ++Skype
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
