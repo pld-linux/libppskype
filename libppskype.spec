@@ -49,7 +49,7 @@ Statyczna biblioteka ++Skype.
 
 %prep
 %setup -q -n libskype
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} -f Makefile.unx \
